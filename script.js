@@ -24,3 +24,25 @@ window.addEventListener('scroll', toggleFixedButtons);
       menu.style.display = 'none'; // Ascunde div-ul
     }
   });
+
+
+
+
+
+  // Selectează toate imaginile
+  const images = document.querySelectorAll('.hero-image');
+  let currentIndex = 0;
+
+  // Funcția care schimbă imaginile
+  function changeImage() {
+    // Ascunde imaginea curentă
+    images[currentIndex].classList.remove('active');
+    // Calculează următoarea imagine
+    currentIndex = (currentIndex + 1) % images.length;
+    // Afișează următoarea imagine
+    images[currentIndex].classList.add('active');
+  }
+
+  // Setează intervalul pentru schimbarea imaginilor
+  setInterval(changeImage, 10000); // 10 secunde
+
