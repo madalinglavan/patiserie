@@ -12,3 +12,15 @@ function toggleFixedButtons() {
 
 // Adăugăm un event listener pentru scroll
 window.addEventListener('scroll', toggleFixedButtons);
+
+
+
+
+  document.getElementById('toggle-menu').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    if (menu.style.display === 'none' || menu.style.display === '') {
+      menu.style.display = 'block'; // Afișează div-ul
+    } else {
+      menu.style.display = 'none'; // Ascunde div-ul
+    }
+  });
