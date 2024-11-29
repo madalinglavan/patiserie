@@ -261,11 +261,16 @@ header{
 
 .menu-items {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: column; /* Așezare pe o singură linie */
+    grid-template-columns: repeat(6, 400px); /* Specificăm manual numărul de coloane */
     gap: 20px;
+    overflow-x: auto; /* Activăm scroll-ul orizontal */
+    padding: 10px;
+    scroll-snap-type: x mandatory; /* Adăugăm aliniere pe scroll */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling pe mobile */
 }
-
 .menu-item {
+    scroll-snap-align: start; /* Aliniere la începutul produsului */
     text-align: center;
     background-color: #ffffff;
     border: 1px solid #ddd;
@@ -274,7 +279,6 @@ header{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .menu-item:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -301,7 +305,15 @@ header{
     font-weight: bold;
 }
 
+/* Stil pentru scroll bar (opțional) */
+.menu-items::-webkit-scrollbar {
+    height: 8px; /* Înălțimea scroll bar-ului */
+}
 
+.menu-items::-webkit-scrollbar-thumb {
+    background-color: #d2691e;
+    border-radius: 4px;
+}
 
 
 
@@ -423,8 +435,13 @@ header{
       }
       .menu-items {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: column; /* Așezare pe o singură linie */
+        grid-template-columns: repeat(6, 200px); /* Specificăm manual numărul de coloane */
         gap: 20px;
+        overflow-x: auto; /* Activăm scroll-ul orizontal */
+        padding: 10px;
+        scroll-snap-type: x mandatory; /* Adăugăm aliniere pe scroll */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling pe mobile */
     }
   }
   

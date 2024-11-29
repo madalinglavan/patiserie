@@ -26,6 +26,14 @@ document.getElementById('toggle-menu').addEventListener('click', function() {
 
 
 
+
+
+
+
+
+
+
+
   // Selectează toate imaginile
   const images = document.querySelectorAll('.hero-image');
   let currentIndex = 0;
@@ -46,6 +54,27 @@ document.getElementById('toggle-menu').addEventListener('click', function() {
 
 
 
+
+
+
+
+  const menuItems = document.querySelector('.menu-items');
+
+  menuItems.addEventListener('scroll', function() {
+      // Verificăm dacă scroll-ul a ajuns la sfârșitul containerului
+      const scrollLeft = menuItems.scrollLeft;
+      const scrollWidth = menuItems.scrollWidth;
+      const clientWidth = menuItems.clientWidth;
+  
+      if (scrollLeft + clientWidth >= scrollWidth) {
+          // Dacă s-a ajuns la capătul containerului, oprește scroll-ul
+          menuItems.style.scrollBehavior = 'auto';  // Oprește scroll-ul lin
+      } else {
+          // Permite scroll-ul lin în continuare
+          menuItems.style.scrollBehavior = 'smooth';
+      }
+  });
+  
 
 
 
