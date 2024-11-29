@@ -178,7 +178,6 @@ header{
   
   .buttons-container.fixed {
     position: fixed;
-    bottom: 10px;
     top :93vh;
   }
   
