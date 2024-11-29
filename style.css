@@ -1,9 +1,13 @@
 
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f8f5f1;
     
 }
 header{
@@ -13,16 +17,13 @@ header{
     display: flex;
     flex-direction:column;
     justify-content: center;
-    
-    
 }
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     padding: 5px 10px;
-    width: fit-content;
-    height: 50px;
+    width: 100%;
+    height: fit-content;
     margin: 0 auto;
 }
 
@@ -34,23 +35,49 @@ header{
 }
 
 .navbar li {
-    margin: 0 15px;
+    margin: 10px 15px;
 }
 
+
+
+/* Starea de bază a linkului */
 .navbar a {
+    position: relative;
     text-decoration: none;
+    overflow: hidden;
+    transition: color .6s ease;
     color: white;
     font-weight: bold;
-    transition: color 0.3s;
     text-transform: uppercase;
+    font-size: .9rem;
 }
 
-.navbar a:hover {
-    color: #ff0000; 
+/* Animație pentru hover */
+.navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff0000; /* Culoarea finală pe hover */
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: bottom top;
 }
+
+/* Efectul de hover */
+.navbar a:hover {
+    color: #ff0000; /* Schimbă culoarea textului la hover */
+}
+
+.navbar a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom top;
+}
+
 .navbar-logo{
     display: flex;
-    flex-direction: column;
     text-align: center;
 }
 .navbar-logo a {
@@ -65,17 +92,17 @@ header{
     z-index: 10000;
 }
 .navbar-logo img {
-    margin-top: 100px;
-    width: 100px; 
+    width: 80px; 
 }
 .navbar-logo h1{
-    margin:0 15px;
+    margin:0 1px;
 }
 .hero {
     position: relative;
     width: 100%;
     height: 80vh; /* Ocupă 80% din înălțimea viewport-ului */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -90,6 +117,54 @@ header{
     left: 0;
     z-index: 1;
 }
+.buttons-container {
+    position: absolute;
+    width: 90%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 100;
+    transition: all 0.3s ease-in-out; /* Tranziție pentru o trecere mai fluidă */
+  }
+  
+  .buttons-container.fixed {
+    position: fixed;
+    top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  
+  .button i {
+    margin-right: 8px; /* Distanță între iconiță și text */
+  }
+  
+  .button:hover {
+    background-color: #b30000;
+    color: #f4e3d7;
+  }
+  
+  .right span {
+    position: absolute;
+    font: 0.7em sans-serif;
+    top: 0;
+    right: 5px;
+    font-weight: bold;
+  }
 
 .hero-content {
     position: relative;
@@ -113,6 +188,9 @@ header{
     margin-top: 10px;
     line-height: 1.5;
 }
+
+
+
 
 
 
