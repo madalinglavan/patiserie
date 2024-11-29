@@ -7,7 +7,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     
 }
 header{
@@ -106,6 +106,7 @@ header{
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    font-weight: 700;
 }
 
 .hero-image {
@@ -133,15 +134,14 @@ header{
   .buttons-container.fixed {
     position: fixed;
     top: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
   .button {
     display: flex;
     align-items: center;
-    padding: 15px 20px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    padding: 10px 10px;
+    background-color: #b30000;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     border-radius: 5px;
     font-size: 1rem;
@@ -154,16 +154,17 @@ header{
   }
   
   .button:hover {
-    background-color: #b30000;
+    background-color: #000000;
     color: #f4e3d7;
   }
   
   .right span {
     position: absolute;
-    font: 0.7em sans-serif;
-    top: 0;
-    right: 5px;
+    font: 0.5em sans-serif;
+    top: 2px;
+    right: 10px;
     font-weight: bold;
+    text-transform: uppercase;
   }
 
 .hero-content {
@@ -184,9 +185,11 @@ header{
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 10px;
-    line-height: 1.5;
+    font-family: 'Satisfy', cursive;
+    color:rgb(255, 255, 255);
+    text-shadow: 0px -1px  rgb(255, 0, 0);
 }
 
 
@@ -272,8 +275,36 @@ header{
 
 
 
+@media (max-width: 767px) {
+    /* Stiluri pentru telefoane */
+    .navbar {
+        padding:  0px;
 
+    }
+    .navbar li {
+        margin: 10px 3px;
+    }
+    .navbar a {
+        font-size: .7rem;
+    }
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    .hero p {
+        font-size: .9rem;
+        margin-top: 10px;
+        font-family: 'Satisfy', cursive;
+        color:rgb(255, 255, 255);
+        text-shadow: none;
+    }
+  }
+  
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Stiluri pentru tablete și laptopuri mici */
+
+  
+}
 
 
 
