@@ -101,6 +101,7 @@ header{
 }
 .navbar-logo h1{
     margin:0 1px;
+    font-size: .7rem;
 }
 .hero {
     position: relative;
@@ -400,7 +401,7 @@ header{
         margin: auto 3px;
     }
     .navbar a {
-        font-size: .8rem;
+        font-size: .7rem;
     }
     .navbar-logo{
         flex: 0.6;
