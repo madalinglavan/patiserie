@@ -15,16 +15,13 @@ window.addEventListener('scroll', toggleFixedButtons);
 
 
 
-
-  document.getElementById('toggle-menu').addEventListener('click', function () {
-    const menu = document.getElementById('menu');
-    if (menu.style.display === 'none' || menu.style.display === '') {
-      menu.style.display = 'block'; // Afișează div-ul
-    } else {
-      menu.style.display = 'none'; // Ascunde div-ul
-    }
-  });
-
+document.getElementById('toggle-menu').addEventListener('click', function() {
+  // Obține elementul către care vrei să faci scroll
+  const menuSection = document.getElementById('menu');
+  
+  // Derulează până la el
+  menuSection.scrollIntoView({ behavior: 'smooth' });
+});
 
 
 
@@ -45,4 +42,10 @@ window.addEventListener('scroll', toggleFixedButtons);
 
   // Setează intervalul pentru schimbarea imaginilor
   setInterval(changeImage, 10000); // 10 secunde
+
+
+
+
+
+
 
