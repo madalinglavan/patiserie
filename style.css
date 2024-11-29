@@ -166,6 +166,9 @@ header{
     font-weight: bold;
     text-transform: uppercase;
   }
+.fas{
+    margin: 3px;
+  }
 
 .hero-content {
     position: relative;
