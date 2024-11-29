@@ -32,6 +32,7 @@ header{
     display: flex;
     margin: 0;
     padding: 0;
+    
 }
 
 .navbar li {
@@ -150,26 +151,23 @@ header{
   }
   
   .button i {
-    margin-right: 8px; /* Distanță între iconiță și text */
+    margin-right: 10px; /* Distanță între iconiță și text */
   }
   
   .button:hover {
     background-color: #000000;
     color: #f4e3d7;
   }
-  
-  .right span {
-    position: absolute;
-    font: 0.5em sans-serif;
-    top: 2px;
-    right: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-.fas{
-    margin: 3px;
-  }
 
+  .fas{
+    width: fit-content;
+    height: fit-content;
+  }
+  .button:hover {
+  .fas{
+    color: #b30000;
+  }
+}
 .hero-content {
     position: relative;
     z-index: 2;
@@ -280,15 +278,29 @@ header{
 
 @media (max-width: 767px) {
     /* Stiluri pentru telefoane */
-    .navbar {
-        padding:  0px;
-
+    header{
+    margin: 0;
+    padding: 0;
+        
+    }
+    .navbar{
+        margin: 0;
+        padding: 0;
+    }
+    .navbar ul {
+        flex: 1;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
     }
     .navbar li {
-        margin: 10px 3px;
+        margin: auto 2px;
     }
     .navbar a {
         font-size: .7rem;
+    }
+    .navbar-logo{
+        flex: 0.6;
     }
     .hero h1 {
         font-size: 1.5rem;
@@ -300,6 +312,11 @@ header{
         color:rgb(255, 255, 255);
         text-shadow: none;
     }
+    .button {
+        padding: 6px 6px;
+        font-size: .8rem;
+
+      }
   }
   
 
