@@ -178,7 +178,8 @@ header{
   
   .buttons-container.fixed {
     position: fixed;
-    top: 10px;
+    bottom: 10px;
+    top :93vh;
   }
   
   .button {
@@ -262,7 +263,7 @@ header{
 .menu-items {
     display: grid;
     grid-auto-flow: column; /* Așezare pe o singură linie */
-    grid-template-columns: repeat(6, 400px); /* Specificăm manual numărul de coloane */
+    grid-template-columns: repeat(6, 300px); /* Specificăm manual numărul de coloane */
     gap: 20px;
     overflow-x: auto; /* Activăm scroll-ul orizontal */
     padding: 10px;
@@ -287,20 +288,20 @@ header{
     width: 100%;
     border-radius: 10px;
     margin-bottom: 10px;
-    height: auto;
+    height: 70%;
     object-fit: contain;
 }
 
 .menu-item p {
     color: #555;
-    font-size: 16px;
+    font-size: 1rem;
     margin: 5px 0;
 }
 
 .menu-item .price {
     display: block;
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 24px;
     color: #d2691e;
     font-weight: bold;
 }
