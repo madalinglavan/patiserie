@@ -101,3 +101,5 @@ document.getElementById('toggle-menu').addEventListener('click', function() {
     // Apel inițial pentru a seta starea corectă
     handleScroll();
 });
+
+
