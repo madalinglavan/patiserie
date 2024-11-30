@@ -57,24 +57,47 @@ document.getElementById('toggle-menu').addEventListener('click', function() {
 
 
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuItems = document.querySelector('.menu-items');
 
-  const menuItems = document.querySelector('.menu-items');
+    if (!menuItems) {
+        console.error('Elementul .menu-items nu a fost găsit în DOM.');
+        return;
+    }
 
-  menuItems.addEventListener('scroll', function() {
-      // Verificăm dacă scroll-ul a ajuns la sfârșitul containerului
-      const scrollLeft = menuItems.scrollLeft;
-      const scrollWidth = menuItems.scrollWidth;
-      const clientWidth = menuItems.clientWidth;
-  
-      if (scrollLeft + clientWidth >= scrollWidth) {
-          // Dacă s-a ajuns la capătul containerului, oprește scroll-ul
-          menuItems.style.scrollBehavior = 'auto';  // Oprește scroll-ul lin
-      } else {
-          // Permite scroll-ul lin în continuare
-          menuItems.style.scrollBehavior = 'smooth';
-      }
-  });
-  
+    // Funcție pentru debounce
+    function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+            const context = this;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    }
 
+    // Funcție principală pentru gestionarea scroll-ului
+    function handleScroll() {
+        const { scrollLeft, scrollWidth, clientWidth } = menuItems;
 
+        if (Math.ceil(scrollLeft + clientWidth) >= scrollWidth) {
+            // La capătul containerului
+            menuItems.classList.add('scroll-end');
+        } else {
+            // Înainte de capăt
+            menuItems.classList.remove('scroll-end');
+        }
 
+        // Opțional: pentru începutul listei
+        if (scrollLeft === 0) {
+            menuItems.classList.add('scroll-start');
+        } else {
+            menuItems.classList.remove('scroll-start');
+        }
+    }
+
+    // Eveniment pentru scroll cu debounce
+    menuItems.addEventListener('scroll', debounce(handleScroll, 50));
+
+    // Apel inițial pentru a seta starea corectă
+    handleScroll();
+});
