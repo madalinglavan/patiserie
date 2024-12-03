@@ -103,3 +103,84 @@ document.getElementById('toggle-menu').addEventListener('click', function() {
 });
 
 
+
+
+
+
+
+
+
+// script.js
+
+document.addEventListener("DOMContentLoaded", () => {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const buttons = document.querySelectorAll(".slider-button");
+    const sliderContainer = document.querySelector(".image-slider");
+    let autoSlideInterval;
+  
+    let startX = 0;
+    let endX = 0;
+  
+    function updateSlider() {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle("active-slide", index === currentSlide);
+            slide.setAttribute("aria-hidden", index !== currentSlide);
+        });
+  
+        buttons.forEach((button, index) => {
+            button.classList.toggle("active", index === currentSlide);
+        });
+    }
+  
+    function changeSlide(index) {
+        currentSlide = index;
+        updateSlider();
+    }
+  
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }, 10000);
+    }
+  
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+  
+    buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            stopAutoSlide();
+            changeSlide(index);
+            startAutoSlide();
+        });
+    });
+  
+    // Swipe functionality
+    sliderContainer.addEventListener("touchstart", (e) => {
+        stopAutoSlide();
+        startX = e.touches[0].clientX;
+    });
+  
+    sliderContainer.addEventListener("touchmove", (e) => {
+        endX = e.touches[0].clientX;
+    });
+  
+    sliderContainer.addEventListener("touchend", () => {
+        if (startX > endX + 50) {
+            // Swipe left
+            currentSlide = (currentSlide + 1) % slides.length;
+        } else if (startX < endX - 50) {
+            // Swipe right
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        }
+        updateSlider();
+        startAutoSlide();
+    });
+  
+    // Start auto-slide on load
+    startAutoSlide();
+    updateSlider();
+  });
+  

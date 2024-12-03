@@ -57,20 +57,105 @@
         
         <button id="toggle-menu">Explorează produsele noastre</button>
       </div>
-    <section id="torturi-evenimente" class="torturi-section">
+      <section id="torturi-evenimente" class="torturi-section" role="region" aria-labelledby="torturi-title">
         <div class="section-header">
-            <h2>Torturi la comandă pentru evenimente speciale</h2>
+            <h2 id="torturi-title">Torturi la comandă pentru evenimente speciale</h2>
             <p>
-                Fie că e vorba de o aniversare, o nuntă, un botez sau orice alt moment special, torturile noastre personalizate transformă fiecare eveniment într-o poveste dulce. <br> Alegi designul, aromele și dimensiunea, iar noi îți aducem visul la realitate.
+                Fie că e vorba de o aniversare, o nuntă, un botez sau orice alt moment special, torturile noastre personalizate transformă fiecare eveniment într-o poveste dulce. <br>
+                Alegi designul, aromele și dimensiunea, iar noi îți aducem visul la realitate.
             </p>
         </div>
-    
-        <div class="slideshow-container">
-            <div class="slider">
-                
+        <div class="slider-wrapper">
+            <div class="slider-container">
+                <div class="image-slider">
+                    <!-- Slide 1 -->
+                    <div class="slide active-slide" aria-hidden="false">
+                        <div class="description-wrapper">
+                            <div class="description">
+                                <div class="image-box">
+                                    <img src="img/tort-vanilie.jpg" alt="Tort cu aromă de vanilie, decorat elegant." loading="lazy">
+                                </div>
+                                <h2>Delicii de patiserie</h2>
+                                <p>Descoperă croissante aurii și pufoase, perfecte pentru fiecare dimineață!</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam odio unde nam rem modi saepe ducimus quaerat, ex placeat? Ipsa culpa ducimus quibusdam consectetur voluptate, molestiae quos aspernatur cum veniam.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide" aria-hidden="true">
+                        <div class="description-wrapper">
+                            <div class="description">
+                                <div class="image-box">
+                                    <img src="img/tort cu crema de branza.jpg" alt="Tort Red Velvet, decorat cu cremă și fructe proaspete." loading="lazy">
+                                </div>
+                                <h2>Prospețimea fructelor</h2>
+                                <p>Tartele noastre sunt preparate cu cele mai proaspete ingrediente.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="slide" aria-hidden="true">
+                        <div class="description-wrapper">
+                            <div class="description">
+                                <div class="image-box">
+                                    <img src="img/tort-red-velvet.jpg" alt="Tort de ciocolată cu decor elegant." loading="lazy">
+                                </div>
+                                <h2>Ciocolată decadentă</h2>
+                                <p>Torturi bogate în ciocolată, perfecte pentru iubitorii de dulce intens.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="slide" aria-hidden="true">
+                        <div class="description-wrapper">
+                            <div class="description">
+                                <div class="image-box">
+                                    <img src="img/tort-fructe.jpg" alt="Tort cu fructe proaspete și cremă fină." loading="lazy">
+                                </div>
+                                <h2>Explozie de fructe</h2>
+                                <p>Un tort răcoritor, perfect pentru zilele calde de vară.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="slide" aria-hidden="true">
+                        <div class="description-wrapper">
+                            <div class="description">
+                                <div class="image-box">
+                                    <img src="img/tort-ciocolata.png" alt="Tort cu cremă de brânză și blat pufos." loading="lazy">
+                                </div>
+                                <h2>Cremă de brânză</h2>
+                                <p>Un echilibru perfect între dulce și cremos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="slide" aria-hidden="true">
+                        <div class="description-wrapper">
+                            <div class="description">
+                                <div class="image-box">
+                                    <img src="img/tort-ciocolata.png" alt="Tort de nuntă elegant, decorat cu flori naturale." loading="lazy">
+                                </div>
+                                <h2>Eleganță pentru nuntă</h2>
+                                <p>Transformăm fiecare nuntă într-un eveniment de poveste cu torturi unice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Slider Buttons -->
+                <div class="slider-buttons">
+                    <div class="slider-button" data-index="0" aria-label="Slide 1"></div>
+                    <div class="slider-button" data-index="1" aria-label="Slide 2"></div>
+                    <div class="slider-button" data-index="2" aria-label="Slide 3"></div>
+                    <div class="slider-button" data-index="3" aria-label="Slide 4"></div>
+                    <div class="slider-button" data-index="4" aria-label="Slide 5"></div>
+                    <div class="slider-button" data-index="5" aria-label="Slide 6"></div>
+                </div>
             </div>
         </div>
     </section>
+    
     
       <div class="menu-page" id="menu">
         <h1>Meniul nostru</h1>
